@@ -113,3 +113,15 @@
     }
 
 })(window.jQuery);
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbznrWWD5fCJBtBqwfSSNcM_AMNv9pIJeEPld_-2zkgBkWiiK1lYKBE2JSO3dhUrwMW2PA/exec'
+
+const form = document.forms['sintesis-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you from Sintetis Academy! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
