@@ -1560,3 +1560,34 @@ preloader
     opacity: 0;
   }
 }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Memberi jarak antara elemen */
+  text-decoration: none;
+}
+
+.divider {
+  font-size: 16px;
+  color: #000; /* Warna untuk tanda | */
+}
+
+.flag {
+  transition: opacity 0.3s ease; /* Efek transisi untuk perubahan opacity */
+}
+
+/* Jika tab English aktif */
+.language-switch.active-en .id {
+  opacity: 0.5; /* Bendera Indonesia lebih gelap */
+}
+
+/* Jika tab Indonesia aktif */
+.language-switch.active-id .gb {
+  opacity: 0.5; /* Bendera Inggris lebih gelap */
+}
+
+/* Hover mengembalikan opacity ke normal */
+.language-switch .flag:hover {
+  opacity: 1; /* Hilangkan gelap saat hover */
+}
